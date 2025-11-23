@@ -3,11 +3,22 @@ package com.example.demo.controller
 import com.example.demo.model.Usuario
 import com.example.demo.repository.UsuarioRepository
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.GetMapping // Asegúrate de que este import esté
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/usuarios")
 class UsuarioController(private val usuarioRepository: UsuarioRepository) {
+
+    // === OBTENER TODOS LOS USUARIOS (PARA EL ADMIN) ===
+    // Este es el nuevo método que soluciona el error 404
+    @GetMapping
+    fun getAllUsuarios(): List<Usuario> {
+        return usuarioRepository.findAll()
+    }
 
     // === REGISTRO ===
     @PostMapping("/registro")
