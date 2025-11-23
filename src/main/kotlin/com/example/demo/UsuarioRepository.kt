@@ -7,12 +7,9 @@ import java.util.Optional
 
 @Repository
 interface UsuarioRepository : JpaRepository<Usuario, Long> {
-    // Buscar por email (Login y validación)
     fun findByEmail(email: String): Optional<Usuario>
     
-    // Buscar por RUT (Validación para que no se repita)
     fun findByRut(rut: String): Optional<Usuario>
 
-    // Login (Email + Contraseña)
     fun findByEmailAndContrasena(email: String, contrasena: String): Optional<Usuario>
 }

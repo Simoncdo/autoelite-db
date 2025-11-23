@@ -29,7 +29,7 @@ class AutoController(private val autoRepository: AutoRepository) {
         return autoRepository.findById(id).map { autoExistente ->
             val autoActualizado = autoExistente.copy(
                 marca = autoDetalles.marca,
-                modelo = autoDetalles.modelo, // ¡Aquí agregamos la actualización del modelo!
+                modelo = autoDetalles.modelo, 
                 kilometraje = autoDetalles.kilometraje,
                 tipoAuto = autoDetalles.tipoAuto,
                 esDeportivo = autoDetalles.esDeportivo,

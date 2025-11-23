@@ -12,13 +12,12 @@ data class Usuario(
     var nombre: String = "",
 
     @Column(unique = true)
-    var email: String = "", // IMPORTANTE: Se llama 'email' igual que en tu Android
-
+    var email: String = "", 
     var contrasena: String = "",
 
-    var direccion: String = "", // Agregado
+    var direccion: String = "", 
 
-    var rut: String = "",       // Agregado
+    var rut: String = "",       
 
     var rol: String = "CLIENTE"
 )

@@ -7,7 +7,7 @@ import jakarta.persistence.*
 data class Auto(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null, // CAMBIO AQUÍ: Agregamos ? y ponemos null por defecto
+    val id: Long? = null, 
 
     var marca: String = "",
 
