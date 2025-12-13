@@ -1,10 +1,10 @@
 package com.example.demo.repository
 
-import com.example.demo.model.Auto
+import com.example.demo.model.Marca
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface AutoRepository : JpaRepository<Auto, Long> {
-    fun findByMarca(marca: String): List<Auto>
+interface MarcaRepository : JpaRepository<Marca, Long> {
+    fun findByNombre(nombre: String): Marca?
 }

@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.*
 @RequestMapping("/api/autos")
 class AutoController(private val autoRepository: AutoRepository) {
 
+    @GetMapping("/marca/{nombreMarca}")
+    fun getAutosByMarca(@PathVariable nombreMarca: String): List<Auto> {
+        return autoRepository.findByMarca(nombreMarca)
+    }
+
     @GetMapping
     fun getAllAutos(): List<Auto> = autoRepository.findAll()
 
